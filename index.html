@@ -71,7 +71,7 @@ footer{background:var(--g);color:#fff;margin-top:60px;padding:46px 0 20px}.fg{di
 @media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.hv{height:240px}.hero div:first-child{padding:32px 24px}.hero h1{font-size:32px}.flash{grid-template-columns:1fr}.fi{height:200px}.fg{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.menu,.top span+span{display:none}.burger,.mm{display:grid}.mm{display:block}.nav{gap:6px;height:60px}.search{margin-left:0;max-width:none}.logo{font-size:13px;letter-spacing:0}.search{min-width:70px}.ic{width:36px;height:36px;font-size:16px}.ic[aria-label="Theme"]{display:none}.search input{padding:8px 12px}
 .info{display:flex;overflow-x:auto;gap:10px}.info div{flex:0 0 220px}.bento{grid-template-columns:1fr}.cat.big{min-height:250px;grid-row:auto;flex-direction:row;align-items:center}.cat.big .e{font-size:110px}
-.grid{grid-template-columns:1fr 1fr;gap:10px}.pi{height:140px;font-size:64px}.act{opacity:1;transform:none}.blogs{display:flex;overflow-x:auto}.bl{flex:0 0 78%}.sec h2{font-size:22px}.flash>div:first-child{padding:28px 14px}.cd div{min-width:54px;padding:8px}.fg{grid-template-columns:minmax(0,1fr)}.nl{flex-wrap:wrap}
+.grid{grid-template-columns:1fr 1fr;gap:10px}.pi{height:140px;font-size:64px}.act{opacity:1;transform:none}.blogs{display:flex;overflow-x:auto}.bl{flex:0 0 78%}.sec h2{font-size:22px}.flash>div:first-child{padding:28px 14px}.cd div{min-width:54px;padding:8px}.fg{grid-template-columns:minmax(0,1fr)}.add{flex-direction:column}.add button{padding:9px}.pm{flex-direction:column;gap:0}.nl{flex-wrap:wrap}
 .bb{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--card);border-top:1px solid var(--bd);justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));font-size:11px;text-align:center}.bb a{position:relative}.bb span{display:block;font-size:20px}body{padding-bottom:64px}.toast{bottom:100px}}
 .e img,.insta img,.fi img,.hv img{width:100%;height:100%;object-fit:cover;border-radius:16px}.insta div{overflow:hidden}.hv{overflow:hidden}
 .pi img,.t img,.ar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.pi .h2{opacity:0;transition:.3s}.pc:hover .h2{opacity:1}.it .t{position:relative;overflow:hidden}.add button:disabled{background:#999;cursor:not-allowed}
@@ -119,9 +119,9 @@ footer{background:var(--g);color:#fff;margin-top:60px;padding:46px 0 20px}.fg{di
 
 <div class="sec"><h2>Our latest <u>news &amp; blogs</u></h2></div>
 <div class="blogs">
-<div class="bl"><div class="pi" style="background:#e6f2ea">🧥</div><small>12 Oct 2026</small><h4>Winter trends: what's hot and what's not</h4><p>Layers, earthy tones and the jackets everyone will wear this season.</p><a href="#">Read more</a></div>
-<div class="bl"><div class="pi" style="background:#fdf1cf">👟</div><small>18 Oct 2026</small><h4>How to pick the right sneakers</h4><p>Fit, sole and style: a simple guide before you buy.</p><a href="#">Read more</a></div>
-<div class="bl"><div class="pi" style="background:#f6e4ea">👗</div><small>25 Oct 2026</small><h4>Festive outfits for every budget</h4><p>Kurtis, sarees and dresses that look great at any price.</p><a href="#">Read more</a></div>
+<div class="bl"><div class="pi"><img src="##82b126831f85a7e1404d0aa5c585c594##" alt=""></div><small>12 Oct 2026</small><h4>Winter trends: what's hot and what's not</h4><p>Layers, earthy tones and the jackets everyone will wear this season.</p><a href="#">Read more</a></div>
+<div class="bl"><div class="pi"><img src="##30b545a0cb12360064c8cfd2ee157a79##" alt=""></div><small>18 Oct 2026</small><h4>How to pick the right sneakers</h4><p>Fit, sole and style: a simple guide before you buy.</p><a href="#">Read more</a></div>
+<div class="bl"><div class="pi"><img src="##a419b4ba142ad50fd1a18c359d1c7c7b##" alt=""></div><small>25 Oct 2026</small><h4>Festive outfits for every budget</h4><p>Kurtis, sarees and dresses that look great at any price.</p><a href="#">Read more</a></div>
 </div>
 
 <div class="sec"><h2>Follow us on <u>Instagram</u></h2></div>
@@ -195,7 +195,7 @@ function deals(){$("deals").innerHTML=P.slice(0,4).map(p=>card(p,1)).join("")}de
 const end=Date.now()+4*864e5+14*36e5;
 function tick(){let s=Math.max(0,Math.floor((end-Date.now())/1e3)),v=[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,"0"));
 $("cd").innerHTML=["Days","Hours","Minutes","Seconds"].map((l,i)=>`<div><b>${v[i]}</b>${l}</div>`).join("");
-document.querySelectorAll(".dt").forEach((e,i)=>e.textContent=v[(i%3)+1])}
+document.querySelectorAll(".dt").forEach((e,i)=>e.textContent=v[(i%3)+1]+["h","m","s"][i%3])}
 setInterval(tick,1e3);tick();render();upd();
 function pic(p){const a=(p.imgs||[]).map(IR);return a[0]?`<img src="${a[0]}" alt="${p.n}">${a[1]?`<img class="h2" src="${a[1]}" alt="">`:""}`:p.e}
 let DB=null,AS=null,ED=null;
